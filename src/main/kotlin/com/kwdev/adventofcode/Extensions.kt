@@ -14,3 +14,12 @@ inline fun <T> List<T>.windowedBy(separatorSelector: (T) -> Boolean): List<List<
     }
     return list
 }
+
+fun <T> T.println(prefix: String? = null): T {
+    if (prefix != null) {
+        kotlin.io.println("$prefix $this")
+    } else {
+        println(this)
+    }
+    return this
+}
